@@ -51,9 +51,23 @@ public class DemoInt {
     int englishScore = 82;
     int mathScore = 91;
     int historyScore = 83;
+    // double averageScore = (englishScore + mathScore + historyScore)/3;
     double averageScore = (englishScore + mathScore + historyScore)/3.0;
     System.out.println(averageScore);
     //importance of data type: the 3 is a int
     // ! (int + int + int) / int -> int
+    
+    int appleCount = 9;
+    double applePrice = 9.5;
+    int orangeCount = 4;
+    double orangePrice = 6.5;
+    double discount = 0.95;
+    double finalAmount = (applePrice * appleCount + orangePrice * orangeCount) * discount;
+    System.out.println(finalAmount);
+    //finalAmount
+    // int xdoublt + int x double x double
+    //double
+
+    // finalAmount 
   }
 }
