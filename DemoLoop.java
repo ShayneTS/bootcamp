@@ -71,6 +71,7 @@ public class DemoLoop {
     }
     System.out.println(sumEven - sumOdd); // 25
 
+
     // 0-20, sum up all even number; 21-50, sum up all odd numbers
     // find the product of both total number
     sumEven = 0;
@@ -88,6 +89,18 @@ public class DemoLoop {
     }
     System.out.println(sumEven * sumOdd); //57750
 
+    //self test, from 0-20, the sum of all numbers that can be divided by five, minus sum of all numbers that can be divided by 3
+    int fiveTotal = 0;
+    int threeTotal = 0;
+    for (int i = 0; i < 21; i++) {
+      if (i % 5 == 0) {
+        fiveTotal += i;
+      } else if ( i % 3 == 0 ) {
+        threeTotal += i;
+      }
+      }
+      System.out.println( fiveTotal - threeTotal); //answer should be 50-63, but 15 was counted only towards fiveTotal
+    
     
   }
 }
