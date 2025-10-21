@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class DemoLoop {
   public static void main(String[] args) {
     // flow -> if-else
@@ -102,5 +104,13 @@ public class DemoLoop {
       System.out.println( fiveTotal - threeTotal); //answer should be 50-63, but 15 was counted only towards fiveTotal
     
     
+    // ! Scanner (too little to create own folder, so included here)
+    // not much practical use, just knowing enough
+    Scanner s = new Scanner(System.in);
+    System.out.println("Please input an integer");
+    int input = s.nextInt(); 
+    int result = input * 3;
+    System.out.println("result=" + result);
+
   }
 }
