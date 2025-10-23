@@ -103,14 +103,29 @@ public class DemoLoop {
       }
       System.out.println( fiveTotal - threeTotal); //answer should be 50-63, but 15 was counted only towards fiveTotal
     
+    // Loop + if + break/continue
+    // 1. break
+    // searching
+      String[] names = new String[] {"John", "Peter", "Sally", "Vincent", "Steven"};
+      // Find the first name that length > 5
+      String targetName = null;
+      for (int i = 0; i < names.length; i++) {
+        System.out.println("i = " + i);
+        if (names[i].length() > 5) {
+          targetName = names[i];
+          break; // break the loop
+        }
+      }
+      System.out.println(targetName);
+
     
     // ! Scanner (too little to create own folder, so included here)
     // not much practical use, just knowing enough
-    Scanner s = new Scanner(System.in);
-    System.out.println("Please input an integer");
-    int input = s.nextInt(); 
-    int result = input * 3;
-    System.out.println("result=" + result);
+   // Scanner s = new Scanner(System.in);
+   // System.out.println("Please input an integer");
+   // int input = s.nextInt(); 
+    //int result = input * 3;
+   // System.out.println("result=" + result);
 
   }
 }
