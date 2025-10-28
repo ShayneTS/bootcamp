@@ -6,12 +6,32 @@ public class Cat {
   private int age;
 
   // ! Contstructor
+
+  // ! Empty Constructor (No Parameter)
   public Cat() {
     System.out.println("Creating a cat ...");
 
     // default name and age
     this.name = "John";
     this.age = 10;
+  }
+
+  // ! All Arguments Constructor
+  public Cat(String name, int age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  // ! Object Method (Instance Method)
+  // c1.getName
+  public String getName() {
+    return this.name;
+  }
+
+  
+  // ! Object Method (Instance Method)
+  public int getAge() {
+    return this.age;
   }
 
   public static void main(String[] args) {
@@ -21,7 +41,7 @@ public class Cat {
     // "new Cat()" -> create a cat object
 
     // "c1" is a label to refer the cat object
-    Cat c1 = new Cat();
+    Cat c1 = new Cat(); 
     System.out.println(c1.name); // John
     System.out.println(c1.age); // 10
 
@@ -42,6 +62,12 @@ public class Cat {
 
     // ! excel row = object
 
+
+    Cat c3 = new Cat ("Mary", 8);
+    Cat c4 = new Cat(); // default: John 10
+    System.out.println(c3.getAge());// 8
+    System.out.println(c4.getAge()); // 10
+    System.out.println(c3.getName()); // Mary
   }
 }
 
