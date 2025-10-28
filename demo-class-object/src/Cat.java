@@ -1,0 +1,48 @@
+// ! Class -> blueprint, file (harddisk)
+// ! Object
+public class Cat {
+  // ! Attribute 
+  private String name;
+  private int age;
+
+  // ! Contstructor
+  public Cat() {
+    System.out.println("Creating a cat ...");
+
+    // default name and age
+    this.name = "John";
+    this.age = 10;
+  }
+
+  public static void main(String[] args) {
+    // ! Create a cat object
+    // "new" -> create
+    // "Cat()" -> calling a constructor
+    // "new Cat()" -> create a cat object
+
+    // "c1" is a label to refer the cat object
+    Cat c1 = new Cat();
+    System.out.println(c1.name); // John
+    System.out.println(c1.age); // 10
+
+    new Cat(); // ! you no longer able to find the cat object, after creating it
+    Cat c2 = new Cat(); 
+    System.out.println(c2.name); // John 
+    System.out.println(c2.age); // 10
+
+    c2.name = "Jennie";
+    c2.age = 12;
+    Cat[] cats = new Cat [] {c1, c2};
+    System.out.println(cats[1].name); // Jennie
+    System.out.println(cats[1].age);  // 12
+
+    // ! Without Class
+    String[] names = new String[] {"John", "Jennie"}; // excel column
+    int[] ages = new int[] {10, 12}; // excel column
+
+    // ! excel row = object
+
+  }
+}
+
+// homework: create a new class related to my industry

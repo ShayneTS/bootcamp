@@ -52,11 +52,17 @@ public class DemoPrimitiveII {
     int r1 = new Random ().nextInt(3); // 0.2
     System.out.println("r1=" + r1);
 
-    // marksix (1-49) homework
-    int markSix = new Random ().nextInt(50);
+    // marksix (1-49) homework -> 0 - 48
+    int markSix = new Random ().nextInt(49)+1;
     System.out.println("Marksix result=" +markSix);
 
     // 'a' - 'z' (print a random character, tips 97 - 122)
+
+    // 0 -25
+    // 97 - 122
+    int targetAscii = new Random().nextInt(26) + 97;
+    System.out.println((char) targetAscii); //random 'a' - 'z'
+
     int r2 = new Random ().nextInt('z' - 'a' + 1);
     System.out.println("ASCII of r2=" + r2); //need to use the code to translate r2 value into char here
   }
