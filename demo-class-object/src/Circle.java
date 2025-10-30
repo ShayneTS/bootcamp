@@ -35,7 +35,7 @@ public class Circle {
     .doubleValue();
   }
 
-public static void main(String[] args) {
+public static void main(String[] args) { //this whole main part is for testing the program, it is still a program even without it
   // circle 1.3
   Circle c1 = new Circle(1.3); // creating an object on the right, the left side is the address of the created object
   // circle 2.8

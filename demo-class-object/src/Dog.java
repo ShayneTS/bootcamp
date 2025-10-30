@@ -3,9 +3,9 @@
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-public class Dog {
+public class Dog { //private vs public?? 
   // ! Attribute
-  private double weight;
+  private double weight; //attributes are always private
   private double height;
 
   // ! Constructor
@@ -14,13 +14,22 @@ public class Dog {
     System.out.println("Creating a Dog");
 
   }
-  // all args
+  // all args (argument)
   // ! What is meaning of this
   public Dog(double weight, double height) {
     this.weight = weight;
     this.height = height;
-
+    // the one who "new" a Dog must provide the weight and height
   }
+
+  // ! Duplicated: the number of parameters and the type of the parameters of them are same
+  public Dog(double weight) { //duplicated "constructor" (height and weight), the program doesn't know to call which one
+    this.weight = weight;
+  }
+  //public Dog(double height) {
+  //  this.height = height;
+  //}
+
   // ! getter for weight and height
   public Double getWeight() {
     return this.weight;
@@ -41,7 +50,7 @@ public class Dog {
   }
 
   // ! setter (update attribute)
-  public void setWeight(double weight) {
+  public void setWeight(double weight) { //why can't same style of method? because different name (but constructor can't change name)
     this.weight = weight;
   }
   public void setHeight(double height){
