@@ -11,26 +11,36 @@ public class Order {
     return this.items.length;
   }
 
+  public double getSubtotal (String itemName){
+    for (Item item : this.items) {
+      if (item.getName().equals(itemName)) {
+        return item.subtotal();
+      }
+    }
+    return 0.0;
+  }
+
+// for (double x : amounts) {
+     // total = BigDecimal.valueOf(total).add(BigDecimal.valueOf(amounts)).doubleValue(); // ! why doesn't work?
+      
+
   public void addItem(Item newItem) {
-    Item[] newItems = new Item[this.items.length+1];
+    Item[] newItems = new Item[this.items.length + 1];
     // copy the original items into the new array
     int idx = 0;
-    for (Item item : this.items) {
-      newItems[idx] = item;
+    for (Item x : this.items) {
+      newItems[idx] = x;
       idx++;
     }
     newItems[idx] = newItem;
-    this.items = newItems; //! very important
+    this.items = newItems;
   }
 
-  public double totalAmount() { //a presentation only, didn't change anything
+  public double totalAmount() {
     BigDecimal total = BigDecimal.ZERO;
-    for (Item item : this.items) { //check meaning of : with AI
-      total = total.add(BigDecimal.valueOf(item.totalAmount()));
+    for (Item item : this.items) {
+      total = total.add(BigDecimal.valueOf(item.subtotal()));
     }
     return total.doubleValue();
-  }
-  public static void main(String[] args) {
-    
   }
 }

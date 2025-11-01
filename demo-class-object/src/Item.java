@@ -1,18 +1,22 @@
 public class Item {
   private double price;
   private int quantity;
-  private String name; //underlined because not used, not get
+  private String name;
 
   public Item(String name, double price, int quantity) {
     this.name = name;
     this.price = price;
     this.quantity = quantity;
   }
-  public double totalAmount() {
-    return this.price*this.quantity;
+
+  // ! Presentation
+  public double subtotal() {
+    return this.price * this.quantity;
   }
 
   public String getName() {
     return this.name;
   }
+
+
 }
