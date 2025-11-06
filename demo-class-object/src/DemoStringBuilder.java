@@ -60,6 +60,10 @@ public class DemoStringBuilder {
     s1 = String.valueOf("hello"); // ! Firstly it search string pool
     System.out.println(s1==s2); // true
 
+    String s3 = s1.replace('e', 'x');
+
+    
+
   }
   
 }
