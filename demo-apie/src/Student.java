@@ -8,11 +8,48 @@ public class Student extends Human { //extends human = include all human attribu
   // ! Instance Variable
   private int id;
   private String name;
+  private int candyCount;
 
+  //Bonus question
+  private Candy[] candies;
+
+  public Student(){
+    this.id = ++counter;
+    this.candyCount= 0;
+    this.candies = new Candy[0];
+  }
+
+  public Student() {
+    this.id = ++counter;
+    this.candyCount = 0;
+  }
 
   public Student (String name) {
     this.id = ++counter;
     this.name = name;
+    this.candyCount = 0;
+  }
+
+  public Cnady[] getCandies(){
+    return this.candies;
+  }
+
+  public int getCandyCount(){
+    return this.candyCount;
+  }
+
+  public void addCandy(){
+    this.candyCount++;
+  }
+
+  public void receiveCandy(Candy newCandy){
+    Candy[] newCandies = new Candy[this.candies.length + 1];
+    int idx = 0;
+    for (int i = 0; i < this.candies.length; i++) {
+      newCandies[idx++] = this.candies[i];
+    }
+    newCandies[idx] = newCandy;
+    this.candies = newCandies;
   }
 
   public int getId() {
