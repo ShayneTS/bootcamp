@@ -5,6 +5,7 @@
 public abstract class Shape {
   private String color;
 
+  //no arg constructor
   public Shape(){
     System.out.println("Shape's empty constructor");
   }

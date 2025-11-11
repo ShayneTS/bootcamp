@@ -10,8 +10,8 @@ public class Candy {
   }
 
   public String toString() {
-    return "Candy(" //
-        + "color=" + this.color //
+    return "Candy(" 
+        + "color=" + this.color 
         + ")";
   }
 }

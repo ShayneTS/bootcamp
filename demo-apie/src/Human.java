@@ -1,24 +1,25 @@
 import java.time.LocalDate;
 
-public class Human { //abstract? > no new
-  private double weight; // extra: what's the dif between Double and double? if Double > Object, can be null
-  private double height; // double > primitive value (cannot be null)(default value = 0.0)
+public class Human {
+  // private Double weight; // Object (can be null)
+  private double weight; // primivate value (default value=0.0)
+  private double height; // primivate value (default value=0.0)
 
-  public LocalDate dateOfBirth; //LocalDate is a....
+  public LocalDate dateOfBirth;
 
-  // constructor / getter / setter
-  public Human (double weight, double height) {
+  // constructor/ getter/ setter
+  public Human(double weight, double height) {
     this.weight = weight;
     this.height = height;
   }
 
-  public Human (double weight, double height, LocalDate dateOfBirth) {
+  public Human(double weight, double height, LocalDate dateOfBirth) {
     this.weight = weight;
     this.height = height;
     this.dateOfBirth = dateOfBirth;
   }
 
-  public Human (){
+  public Human() {
 
   }
 
@@ -42,15 +43,15 @@ public class Human { //abstract? > no new
     this.height = height;
   }
 
-  public LocalDate getDateOfBirth(){
+  public LocalDate getDateOfBirth() {
     return this.dateOfBirth;
   }
-  
-  public static void main(String[] args) {
-    Human h1 = new Human(73, 176.0); //why 73 can ? becoz auto promo to 73.0
-    Human h2 = new Human();
 
-    System.out.println(h2.getWeight());
+  public static void main(String[] args) {
+    Human h1 = new Human(73, 176.0);
+    Human h2 = new Human();
+    System.out.println(h2.getWeight()); // 0.0
+
     Student s1 = new Student("John");
     s1.setHeight(180);
     s1.setWeight(72.5);
@@ -66,13 +67,11 @@ public class Human { //abstract? > no new
     LocalDate ld1 = LocalDate.of(2000, 1, 31);
     System.out.println(ld1.plusWeeks(2L)); // 2000-02-14
     System.out.println(ld1); // 2000-01-31
-    System.out.println(ld1.isBefore(LocalDate.of(2000, 1, 1)));
-    System.out.println(ld1.isAfter(LocalDate.of(2000,1,1)));
-    System.out.println(ld1.isLeapYear());
+    System.out.println(ld1.isBefore(LocalDate.of(2000, 1, 20))); // false
+    System.out.println(ld1.isAfter(LocalDate.of(2000, 1, 1))); // true
+    System.out.println(ld1.isLeapYear()); // true
 
     // ! Most of the class design won't revise itself value (i.e. LocalDate, BigDecimal, String)
     // But StringBuilder, StringBuffer revise itself (i.e. sb.append("a"))
-
-
   }
 }
