@@ -25,8 +25,8 @@ public class Mage extends Hero{
     Mage mage1 = new Mage();
     System.out.println("created mage1 level = ");
     System.out.println(mage1.getLevel());
-    int maxHp = Heros.getMaxHp(Heros.MAGE, mage1.getLevel());
-    mage1.setHp(maxHp);
+    int bornHp = Heros.getMaxHp(Heros.MAGE, mage1.getLevel());
+    mage1.setHp(bornHp);
     //mage1.setHp(Heros.MAGE, mage1.getLevel());
     System.out.println("HP = " + mage1.getHp());
 

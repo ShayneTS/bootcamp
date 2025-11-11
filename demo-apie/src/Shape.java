@@ -27,6 +27,13 @@ public abstract class Shape {
   // abstract method: don't need to present the logic at this moment
   public abstract double getArea(); // can ; because is abstract
 
+  @Override
+  public String toString(){
+    return "Shape(" //
+      + "color=" + this.color //
+      + ")";
+  }
+
   public static void main(String[] args) {
     
   }

@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 
-public class Student extends Human {
+public class Student extends Human implements Eatable{
   // ! Static Variable (靜態變量)
   // ! 生存於另一世界既variable
   public static int counter = 0;
@@ -35,6 +35,11 @@ public class Student extends Human {
 
   public void addCandy() {
     this.candyCount++;
+  }
+
+  @Override
+  public void eat() {
+    System.out.println("Student is eating...");
   }
 
   public void receiveCandy(Candy newCandy) {

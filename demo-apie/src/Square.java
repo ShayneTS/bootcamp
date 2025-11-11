@@ -19,6 +19,27 @@ public class Square extends Shape {
     return this.length * this.length;
   }
 
+  // same color same side = same square
+  @Override
+  public String toString(){
+    return "Square(" //
+      + "length=" + this.length //
+      // + ",color=" + super.getCOlor() //
+      + "shape=" + super.toString()
+      + ")";
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o)
+      return true;
+    if (!(o instanceof Square))
+      return false;
+    Square square = (Square) o;
+    return this.length == square.getLength() //
+      && super.equals(square);
+  }
+
   public static void main(String[] args) {
     // ! why do we need parent class (inheritance)?
     // 1. share common attribute
@@ -42,6 +63,10 @@ public class Square extends Shape {
       total = total.add(BigDecimal.valueOf(shape.getArea()));
     }
     System.out.println(total); // 80.1
+  
+    Square s1 = new Square(3.4, "BLACK");
+    System.out.println(s1);
+  
   }
   
 }
