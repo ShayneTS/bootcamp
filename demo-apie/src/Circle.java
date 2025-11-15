@@ -24,6 +24,9 @@ public class Circle extends Shape {
     return this.radius * this.radius * Math.PI;
   }
 
+  public double getArea2(){
+    return this. radius * 10;
+  }
   public static void main(String[] args) {
     Circle c1 = new Circle(3.5, "RED"); // create object Circle c1 with 3.5 radius and RED as color
     Circle c2 = new Circle(); // create object Circle c2 with empty constructor
