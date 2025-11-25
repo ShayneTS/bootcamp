@@ -15,11 +15,13 @@ public class DemoArrayList {
     names2.add("John");
     names2.add("Peter");
     names2.add("Susan");
+    names2.add("Peter");
 
     System.out.println(names2);
     names2.remove("Peter");
     System.out.println(names2);
-
+    names2.remove("Peter"); //when removing repeated String, it removes the one being read first
+    System.out.println(names2);
     System.out.println(names2.size());
 
     System.out.println(names2.get(1));
