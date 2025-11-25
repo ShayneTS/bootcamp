@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class DemoArrayList {
   public static void main(String[] args) {
@@ -33,8 +34,35 @@ public class DemoArrayList {
     System.out.println(names2.contains("Peter")); // false
 
     System.out.println(names2.contains("John") || names2.contains("Susan")); // true, but not very efficient
+    // ||  means OR
 
     // Challenge: Cat.java -> ArrayList<Cat>
     // Animal.java (Cat extends Animal) -> ArrayList<Animal>
+
+    Cat c1 = new Cat("John", 3);
+    Cat c2 = new Cat("Mary", 99);
+
+    // Approach 1: Create ArrayList Object
+    ArrayList<Cat> cats = new ArrayList<>();
+    cats.add(c1);
+    cats.add(c2);
+    cats.add(new Cat("Leo", 15));
+    System.out.println(cats);
+
+    // remove -> for loop -> cat.equals()
+    cats.remove(new Cat("Leo", 13)); // but now ignores age?!(age is only in my notes)
+    System.out.println(cats);
+
+    // ! remove() -> remove first matched object, as shown in line 24
+
+    // Approach 2:
+    ArrayList<Cat> cats2 = 
+        new ArrayList<>(List.of(new Cat ("Oscar", 9), new Cat ("Jenny", 7)));
+
+    // Combine 2 cat list
+    cats.addAll(cats2);
+    System.out.println(cats);
+    // cats.addAll()
+
   }
 }

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Objects;
 //self test
 public class Cat extends Animal {
   private String name;
@@ -10,11 +11,24 @@ public class Cat extends Animal {
   }
   //getter
   public String getName(){
-    return name;
+    return this.name;
   }
   public int getAge(){
     return age;
   }
+
+  // if not override, using Object.class equals() -> address
+  // if override like below, imply they are same cat if have same name
+  @Override
+  public boolean equals (Object obj) {
+    if (this == obj)
+      return true;
+    if (!(obj instanceof Cat))
+      return false;
+    Cat c1 = (Cat) obj;
+    return Objects.equals(this.name, c1.getName());
+  }
+  
   //override to string for better printout
   @Override
   public String toString(){
