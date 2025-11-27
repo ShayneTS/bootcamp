@@ -50,7 +50,8 @@ public class DemoArrayList {
     System.out.println(cats);
 
     // remove -> for loop -> cat.equals()
-    cats.remove(new Cat("Leo", 13)); // but now ignores age?!(age is only in my notes)
+    cats.remove(new Cat("Leo", 15)); // but now ignores age?!
+    // (age is only in my notes)(modied on 27/11/2025) refer Cat Line 29
     System.out.println(cats);
 
     // ! remove() -> remove first matched object, as shown in line 24

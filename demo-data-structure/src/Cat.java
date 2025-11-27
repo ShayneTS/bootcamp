@@ -26,9 +26,15 @@ public class Cat extends Animal {
     if (!(obj instanceof Cat))
       return false;
     Cat c1 = (Cat) obj;
-    return Objects.equals(this.name, c1.getName());
+    return Objects.equals(this.name, c1.getName()) && this.age == c1.getAge();
   }
   
+  @Override
+  public int hashCode() {
+    return Objects.hash(this.name, this.age);
+  }
+
+
   //override to string for better printout
   @Override
   public String toString(){
