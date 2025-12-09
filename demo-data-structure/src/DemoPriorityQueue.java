@@ -15,8 +15,8 @@ public class DemoPriorityQueue {
     System.err.println(pq.poll()); // Alex
     pq.add("Ben");
     System.out.println(pq.poll()); // Ben
-    System.err.println(pq.poll()); // Cathy
-    System.err.println(pq.poll()); // Steven
+    System.out.println(pq.poll()); // Cathy
+    System.out.println(pq.poll()); // Steven
 
     // Example 2
     Queue<Integer> integers = new PriorityQueue<>(new SortByDesc());
