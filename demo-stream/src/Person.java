@@ -13,6 +13,13 @@ public class Person {
     this.age = builder.age;
   }
 
+  @Override
+  public String toString() {
+    return "Person("//
+    + "name=" + this.name//
+    + ",age=" + this.age//
+    + ")";
+  }
 public String getName(){
   return this.name;
 }
