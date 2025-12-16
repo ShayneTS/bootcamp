@@ -1,7 +1,7 @@
 public class DemoSwitchExpression {
   public static void main(String[] args) {
     // switch (Java 1.0)
-    // Disadvantage: 1) no range checking, 2) break proactively
+    // ! Disadvantages: 1) No range checking, 2) break proactively
     char grade = 'B';
     switch (grade) {
       case 'A':
@@ -14,10 +14,10 @@ public class DemoSwitchExpression {
         System.out.println("Doing something for grade C.");
         break;
       default: // else
-        System.out.println("Doing something for other grades.");
+        System.out.println("Doing something for other grades ...");
     }
 
-    // Not good for number checking, because swtich does not support range check
+    // Not good number checking, because switch does not support range check.
     int score = 80;
     char examGrade = ' ';
 
@@ -37,41 +37,41 @@ public class DemoSwitchExpression {
     }
 
     // Java 14: Switch Expression
-    Color[] colors = new Color[] {Color.RED, Color.YELLOW, Color.RED, Color.BLUE};
+    Color[] colors =
+        new Color[] {Color.RED, Color.YELLOW, Color.RED, Color.BLUE};
     int sum = 0;
     for (Color color : colors) {
       // color -> int
       // sum
       // ! enum + Switch Expression:
-      // ! 1. Java helps to check if all enum value has been considered + avoid duplicated enum value
+      // ! 1. Java helps check if all enum value has been considered + avoid duplicated enum value
       // ! 2. simple logic for return value
-      // ! 3. support return value or void method
+      // ! 3. Support return value or void method
       int value = switch (color) {
         case RED -> 7;
         case YELLOW -> 9;
         case BLUE -> 15;
-        // default -> 100; can but useless
+        // default -> 100;
       };
       sum += value;
     }
-    System.out.println("sum=" + sum);
+    System.out.println("sum=" + sum); // 38
 
     // Convert String
     String day = "Tuesday";
     // ! Force to use default, when you apply String for Switch Expression.
-    // ! We can use "," for "OR" cases.
-    String dayDescription = switch(day) {
+    // ! We can use "," for "OR" cases
+    String dayDescription = switch (day) {
       case "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" -> "Weekday";
       case "Sunday", "Saturday" -> "Weekend";
       default -> "Unknown";
     };
-    System.out.println("Day Description = " + dayDescription);
+    System.out.println("Day Description=" + dayDescription);
 
-    // ! If lambda logic contain 1 line of code, use "->" without yield
+    // ! if lambda logic contain 1 line of code, use "->" without yield
     // "yield" like return, but "yield" can be used in switch ONLY.
     Direction d1 = Direction.WEST;
     int value = switch (d1) {
-    switch(d1) {
       case EAST:
         yield 10;
       case SOUTH:
@@ -83,8 +83,8 @@ public class DemoSwitchExpression {
     };
   }
 
-  public static int convertDirection(Direction direction){
-    int value = switch (direction){
+  public static int convertDirection(Direction direction) {
+    int value = switch (direction) {
       case EAST:
         yield 10;
       case SOUTH:
@@ -94,11 +94,13 @@ public class DemoSwitchExpression {
       case NORTH:
         yield 40;
     };
+    return value;
   }
 
   public static enum Direction {
     EAST, SOUTH, WEST, NORTH,;
   }
+
   public static enum Color {
     RED, BLUE, YELLOW,;
   }
