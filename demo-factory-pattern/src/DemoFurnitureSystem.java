@@ -3,7 +3,7 @@ public class DemoFurnitureSystem {
   // 1. When you have a new type of furniture, you DON'T need to revise existing class
   // (open-close coding pattern) // ! what is open-close?
   // 2. main logic can be isolated (de-coupling)
-  // 3. Atribute -> Class
+  // 3. Attribute -> Class
   public static void main(String[] args) {
     // ! Parameters (Modern Chair)
     Furniture.Style style = Furniture.Style.MODERN;

@@ -1,14 +1,15 @@
-public class DemoThread3 {
-  private int x = 0;
+import java.util.concurrent.atomic.AtomicInteger;
 
-  // ! Solution for problem 1
-  // synchronized
-  public synchronized void increment(){
-    this.x++;
+public class DemoThread4 {
+  private AtomicInteger x = new AtomicInteger(0);
+
+  // ! solve with AtomicInteger
+  public void increment(){
+    this.x.getAndAdd(1);
   }
 
   public int getX(){
-    return this.x;
+    return this.x.intValue();
   }
   public static void main(String[] args) {
     // ! main Thread
@@ -18,7 +19,7 @@ public class DemoThread3 {
     x++;
     System.out.println(x); // 5
 
-    DemoThread3 d1 = new DemoThread3();
+    DemoThread4 d1 = new DemoThread4();
     // Lambda
     // Runnable is a funcitonal interface, no input, no output
     Runnable task = () -> {
@@ -46,11 +47,8 @@ public class DemoThread3 {
       }
 
     // ! Main Thread comes here after releasing t1 and t2
-    System.out.println(d1.getX()); // not 200_000
+    System.out.println(d1.getX()); // 200_000
 
 
-    // ! two problems:
-    // 1. t1 and t2 doing the same task, which is x++. They change value of the same memory slot.
-    // 2. Main Thread continue to execute the rest of the code after release the two threads
   }
 }
