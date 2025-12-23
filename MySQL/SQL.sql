@@ -179,3 +179,113 @@ from
 (select department, sum(salary) as total_salary
 from persons
 group by department having max(salary) >= 20000) as result;
+
+select * from departments;
+
+
+create table departments (
+	id integer primary key, -- unique, not null
+	dep_name varchar(30)
+);
+select * from departments;
+
+create table employees (
+	id integer primary key,
+    emp_name varchar(30),
+    join_date date,
+    dep_id integer not null, -- 
+    foreign key (dep_id) references departments(id) -- ensure employees.dep_id exists in departments
+);
+select * from employees;
+
+insert into departments values (1, 'IT');
+insert into departments values (2, 'MK');
+insert into employees values (1, 'John', '2025-10-01', 1);
+-- insert into employees values (2, 'Leo', '2025-01-01', 100);
+insert into employees values (2, 'Leo', '2025-01-01', 2);
+
+drop table employees;
+drop table departments;
+
+-- MANY TO MANY EXAMPLE
+-- Student vs Course
+create table Students (
+	id integer primary key,
+	stu_name varchar (30) not null
+);
+
+create table courses(
+	id integer primary key,
+    course_name varchar(30) not null
+);
+
+create table student_courses (
+	id integer primary key,
+	reg_date date not null,
+    stu_id integer not null,
+    course_id integer not null,
+    foreign key (stu_id) references students(id),
+    foreign key (course_id) references courses(id)
+);
+-- PK, FK
+insert into students values (1, 'Leo');
+insert into students values (2, 'Jenny');
+
+insert into courses values (1, 'MATH');
+insert into courses values (2, 'ENGLISH');
+insert into courses values (3, 'CHINESE');
+
+insert into student_courses values (1, '2025-08-05', 1, 2); -- Leo English
+insert into student_courses values (2, '2025-08-05', 1, 3); -- Leo Chinese
+
+insert into student_courses values (3, '2025-08-30', 2, 2); -- Jenny English
+insert into student_courses values (4, '2025-08-15', 2, 1); -- Jenny Math
+
+select * from student_courses;
+
+-- INNER JOIN (SQL)
+select * from deparment; 
+select * from employees;
+
+-- Inner join (table data x table data)
+select e.id as emp_id,
+d.id as dep_id,
+e.emp_name,
+d.dep_name,
+e.join_date
+from departments d inner join employees e on e.dep_id = d.id;
+
+-- Students course
+-- inner join
+
+select s.id, s.stu_name, c.course_name, r.reg_date
+from student_courses r 
+	inner join students s on r.stu_id = s.id
+    inner join courses c on r.course_id = c.id;
+    
+select * from student_courses;
+
+select * from students;
+
+-- Database
+-- One-to-One
+-- Table A 3 columns (heavy read) (Username, Password)
+-- Table B 4 columns (read-write) (Profile picture)
+
+-- Table C 7 columns (Username, Password, Profile picture)
+
+select concat(first_name, ' ', last_name) 
+	from persons;
+    
+select substring(first_name, 2, 4)
+	from persons;
+    
+select length(first_name), length(last_name), Upper(first_name), lower(last_name) from persons;
+select replace(first_name, 'J', 'X')
+	from persons;
+    
+insert into persons values (8, '大明', '陳', 26, 'MK', 28000);
+select char_length(first_name), p.* from persons p;
+
+select instr(first_name, 'J'), p.* from persons p;
+
