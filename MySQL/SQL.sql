@@ -289,3 +289,67 @@ select char_length(first_name), p.* from persons p;
 
 select instr(first_name, 'J'), p.* from persons p;
 
+select p.*, (select max(salary) from persons)
+from persons p;
+
+-- Find the first name and last name of the person, who has the max salary\
+-- Subquery approach 1
+select *
+from persons
+where salary = (select max(salary) from persons);
+-- Subquery approach 2
+select *
+from persons p1 inner join (select max(salary) as max_salary from persons) p2 on p1.salary = p2.max_salary;
+
+-- CTE (approach 3)
+with max_salary_table as (
+	select max(salary) as max_salary from persons
+), min_salary_table as (
+	select min(salary) as max_salary from persons
+)
+select p.*, m.*
+from persons p inner join max_salary_table m on p.salary = m.max_salary;
+
+-- Exist
+select * from departments;
+select * from employees;
+insert into departments values (3, 'HR');
+
+-- Find the departments, and its employees (inner join)
+select d.*, e.*
+from departments d inner join employees e on e.dep_id = d.id;
+
+-- find the departments (show department detail ONLY) which has employee
+select d.*
+from departments d
+where exists (select 1 from employees e where d.id = e.dep_id);
+
+-- Find the departments, which is no employee (left join)
+select d.*, e.*
+from departments d left join employees e on e.dep_id = d.id
+where e.dep_id is null;
+
+select d.*
+from departments d
+where not exists (select 1 from employees e where d.id = e.dep_id);
+
+-- Find the departments, no matter it has employee or not
+select d.*, e.*
+from departments d left join employees e on e.dep_id = d.id; 
+
+-- ORDER BY
+select * 
+from persons
+order by salary desc
+limit 2;
+-- descending order
+
+select *
+from persons
+order by salary;
+-- ascending order
+
+select *
+from persons
+order by salary asc;
+-- ascending order
