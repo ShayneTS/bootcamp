@@ -353,3 +353,90 @@ select *
 from persons
 order by salary asc;
 -- ascending order
+
+-- SQL Exercise 1-------------------------------------------------------------
+create database SQL_Exercise_1;
+use SQL_Exercise_1;
+create table regions (
+	region_id integer primary key,
+    region_name varchar(25)
+);
+insert into regions values
+	(1, 'Europe');
+insert into regions values
+	(2, 'North America'),
+    (3, 'Asia');
+select * from regions;
+create table countries (
+	country_id char(2) primary key,
+    country_name varchar(40),
+    region_id integer,
+    foreign key (region_id) references regions(region_id)
+);
+insert into countries values
+	('DE', 'Germany', 1),
+    ('IT', 'Italy', 1),
+    ('US', 'United States', 2),
+    ('JP', 'Japan', 3);
+select * from countries;
+create table locations (
+	location_id integer primary key,
+    street_address varchar(25),
+    postal_code varchar(12),
+    city varchar(30),
+    state_province varchar(12),
+    country_id char(2),
+    foreign key (country_id) references countries(country_id)
+);
+insert into locations values
+	(1000, '1297 Via Cola di Rie', '989', 'Roma', '', 'IT');
+insert into locations values
+	(1200, '2017 Shinjuku-ku', '1689', 'Tokyo', 'Tokyo', 'JP');
+select * from locations;
+create table departments(
+	department_id integer primary key,
+    department_name varchar(30),
+    manager_id integer,
+    location_id integer,
+    foreign key (location_id) references locations(location_id)
+);
+create table jobs(
+	job_id varchar(10) primary key,
+    job_title varchar(35),
+    min_salary integer,
+    max_salary integer
+);
+create table employees(
+	employee_id integer primary key,
+    first_name varchar(20),
+    last_name varchar(25),
+    email varchar(25),
+    phone_number varchar(20),
+    hire_date date,
+    job_id varchar(10),
+    foreign key (job_id) references jobs(job_id),
+    salary integer,
+    commission_pct integer,
+    manager_id integer,
+    department_id integer,
+    foreign key (department_id) references departments(department_id)
+);
+create table job_history(
+	employee_id integer,
+	foreign key (employee_id) references employees(employee_id),
+    start_date date,
+    end_date date,
+    job_id varchar(10),
+    foreign key (job_id) references jobs(job_id),
+    department_id integer,
+    foreign key (department_id) references departments(department_id),
+    primary key (employee_id, start_date)
+);
+create table job_grades(
+	grade_level varchar(2),
+    lowest_sal integer,
+    highest_sal integer
+);
+
+
+
