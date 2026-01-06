@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.bootcamp.demo.CatTest" time="0.021" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.bootcamp.demo.CatTest" time="0.031" tests="7" errors="2" skipped="0" failures="2">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="C:\github\bootcamp\demo-lombok\target\test-classes;C:\github\bootcamp\demo-lombok\target\classes;C:\Users\shayn\.m2\repository\org\projectlombok\lombok\1.18.42\lombok-1.18.42.jar;C:\Users\shayn\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.0\junit-jupiter-api-5.6.0.jar;C:\Users\shayn\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\shayn\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\shayn\.m2\repository\org\junit\platform\junit-platform-commons\1.6.0\junit-platform-commons-1.6.0.jar;C:\Users\shayn\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.0\junit-jupiter-engine-5.6.0.jar;C:\Users\shayn\.m2\repository\org\junit\platform\junit-platform-engine\1.6.0\junit-platform-engine-1.6.0.jar;"/>
+    <property name="java.class.path" value="C:\github\bootcamp\demo-lombok\target\test-classes;C:\github\bootcamp\demo-lombok\target\classes;C:\Users\shayn\.m2\repository\org\projectlombok\lombok\1.18.42\lombok-1.18.42.jar;C:\Users\shayn\.m2\repository\org\mockito\mockito-junit-jupiter\5.5.0\mockito-junit-jupiter-5.5.0.jar;C:\Users\shayn\.m2\repository\org\mockito\mockito-core\5.5.0\mockito-core-5.5.0.jar;C:\Users\shayn\.m2\repository\net\bytebuddy\byte-buddy\1.14.6\byte-buddy-1.14.6.jar;C:\Users\shayn\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.6\byte-buddy-agent-1.14.6.jar;C:\Users\shayn\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\shayn\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.0\junit-jupiter-api-5.6.0.jar;C:\Users\shayn\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\shayn\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\shayn\.m2\repository\org\junit\platform\junit-platform-commons\1.6.0\junit-platform-commons-1.6.0.jar;C:\Users\shayn\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.0\junit-jupiter-engine-5.6.0.jar;C:\Users\shayn\.m2\repository\org\junit\platform\junit-platform-engine\1.6.0\junit-platform-engine-1.6.0.jar;"/>
     <property name="java.vm.vendor" value="Azul Systems, Inc."/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
@@ -15,9 +15,9 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="HK"/>
     <property name="sun.boot.library.path" value="C:\software\zulu21.46.19-ca-jdk21.0.9-win_x64\bin"/>
-    <property name="sun.java.command" value="C:\Users\shayn\AppData\Local\Temp\surefire2936167246010525552\surefirebooter12690674400874094681.jar C:\Users\shayn\AppData\Local\Temp\surefire2936167246010525552 2026-01-03T21-27-07_339-jvmRun1 surefire7671531563585347263tmp surefire_05463322005967592883tmp"/>
+    <property name="sun.java.command" value="C:\Users\shayn\AppData\Local\Temp\surefire12462228636105461644\surefirebooter11988816212552438458.jar C:\Users\shayn\AppData\Local\Temp\surefire12462228636105461644 2026-01-06T21-52-27_094-jvmRun1 surefire10930932400257455119tmp surefire_013933421246275975182tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="C:\github\bootcamp\demo-lombok\target\test-classes;C:\github\bootcamp\demo-lombok\target\classes;C:\Users\shayn\.m2\repository\org\projectlombok\lombok\1.18.42\lombok-1.18.42.jar;C:\Users\shayn\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.0\junit-jupiter-api-5.6.0.jar;C:\Users\shayn\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\shayn\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\shayn\.m2\repository\org\junit\platform\junit-platform-commons\1.6.0\junit-platform-commons-1.6.0.jar;C:\Users\shayn\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.0\junit-jupiter-engine-5.6.0.jar;C:\Users\shayn\.m2\repository\org\junit\platform\junit-platform-engine\1.6.0\junit-platform-engine-1.6.0.jar;"/>
+    <property name="surefire.test.class.path" value="C:\github\bootcamp\demo-lombok\target\test-classes;C:\github\bootcamp\demo-lombok\target\classes;C:\Users\shayn\.m2\repository\org\projectlombok\lombok\1.18.42\lombok-1.18.42.jar;C:\Users\shayn\.m2\repository\org\mockito\mockito-junit-jupiter\5.5.0\mockito-junit-jupiter-5.5.0.jar;C:\Users\shayn\.m2\repository\org\mockito\mockito-core\5.5.0\mockito-core-5.5.0.jar;C:\Users\shayn\.m2\repository\net\bytebuddy\byte-buddy\1.14.6\byte-buddy-1.14.6.jar;C:\Users\shayn\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.6\byte-buddy-agent-1.14.6.jar;C:\Users\shayn\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\shayn\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.0\junit-jupiter-api-5.6.0.jar;C:\Users\shayn\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\shayn\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\shayn\.m2\repository\org\junit\platform\junit-platform-commons\1.6.0\junit-platform-commons-1.6.0.jar;C:\Users\shayn\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.0\junit-jupiter-engine-5.6.0.jar;C:\Users\shayn\.m2\repository\org\junit\platform\junit-platform-engine\1.6.0\junit-platform-engine-1.6.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\shayn"/>
     <property name="user.language" value="en"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\shayn\AppData\Local\Temp\surefire2936167246010525552\surefirebooter12690674400874094681.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\shayn\AppData\Local\Temp\surefire12462228636105461644\surefirebooter11988816212552438458.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.9+10-LTS"/>
@@ -59,7 +59,27 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testSum" classname="com.bootcamp.demo.CatTest" time="0.013"/>
-  <testcase name="testAllArgsConstructor" classname="com.bootcamp.demo.CatTest" time="0.005"/>
-  <testcase name="testGetter" classname="com.bootcamp.demo.CatTest" time="0.002"/>
+  <testcase name="testSum" classname="com.bootcamp.demo.CatTest" time="0.006">
+    <failure type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <0> but was: <-19>
+	at com.bootcamp.demo.CatTest.testSum(CatTest.java:48)
+]]></failure>
+  </testcase>
+  <testcase name="testShoot" classname="com.bootcamp.demo.CatTest" time="0.002">
+    <error type="java.lang.NullPointerException"><![CDATA[java.lang.NullPointerException: Cannot invoke "com.bootcamp.demo.Gun.shoot()" because "this.gun" is null
+	at com.bootcamp.demo.CatTest.testShoot(CatTest.java:73)
+]]></error>
+  </testcase>
+  <testcase name="testAllArgsConstructor" classname="com.bootcamp.demo.CatTest" time="0.001"/>
+  <testcase name="testMethodA" classname="com.bootcamp.demo.CatTest" time="0"/>
+  <testcase name="testMethodB" classname="com.bootcamp.demo.CatTest" time="0">
+    <failure type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <l> but was: <o>
+	at com.bootcamp.demo.CatTest.testMethodB(CatTest.java:59)
+]]></failure>
+  </testcase>
+  <testcase name="testGetter" classname="com.bootcamp.demo.CatTest" time="0"/>
+  <testcase name="testShoot2" classname="com.bootcamp.demo.CatTest" time="0">
+    <error type="java.lang.NullPointerException"><![CDATA[java.lang.NullPointerException: Cannot invoke "com.bootcamp.demo.Gun.shoot()" because "this.gun" is null
+	at com.bootcamp.demo.CatTest.testShoot2(CatTest.java:87)
+]]></error>
+  </testcase>
 </testsuite>

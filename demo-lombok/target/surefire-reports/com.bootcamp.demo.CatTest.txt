@@ -1,4 +1,20 @@
 -------------------------------------------------------------------------------
 Test set: com.bootcamp.demo.CatTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s - in com.bootcamp.demo.CatTest
+Tests run: 7, Failures: 2, Errors: 2, Skipped: 0, Time elapsed: 0.031 s <<< FAILURE! - in com.bootcamp.demo.CatTest
+com.bootcamp.demo.CatTest.testSum  Time elapsed: 0.006 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <0> but was: <-19>
+	at com.bootcamp.demo.CatTest.testSum(CatTest.java:48)
+
+com.bootcamp.demo.CatTest.testShoot  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "com.bootcamp.demo.Gun.shoot()" because "this.gun" is null
+	at com.bootcamp.demo.CatTest.testShoot(CatTest.java:73)
+
+com.bootcamp.demo.CatTest.testMethodB  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <l> but was: <o>
+	at com.bootcamp.demo.CatTest.testMethodB(CatTest.java:59)
+
+com.bootcamp.demo.CatTest.testShoot2  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "com.bootcamp.demo.Gun.shoot()" because "this.gun" is null
+	at com.bootcamp.demo.CatTest.testShoot2(CatTest.java:87)
+

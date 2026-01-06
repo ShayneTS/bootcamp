@@ -1,5 +1,6 @@
 com\bootcamp\demo\Dog.class
 com\bootcamp\demo\Cat$CatBuilder.class
 com\bootcamp\demo\Cat.class
+com\bootcamp\demo\Gun.class
 com\bootcamp\demo\App.class
 com\bootcamp\demo\Dog$DogBuilder.class

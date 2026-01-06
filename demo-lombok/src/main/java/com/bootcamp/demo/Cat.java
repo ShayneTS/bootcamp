@@ -38,6 +38,33 @@ import lombok.ToString;
 public class Cat {
   private String name;
   private int age;
+  private Gun gun; // 
+
+  // ! Dependency
+  // Cat Object, depends on Gun, Name, Age
+  public Cat(Gun gun, String name, int age){
+    this.gun = gun;
+    this.age = age;
+    this.name = name;
+  }
+
+  public Cat(String name, int age){
+    this.age = age;
+    this.name = name;
+  }
+
+  // ! Developer A
+  // MethodA test cases: 2
+  public int shoot(){ // ! MethodA
+    if (this.gun.shoot()){ // ! MethodB
+      return 100; // true => 100
+    }
+    return -1; // false => -1
+  }
+
+  public void addBullet(){
+    this.gun.addBullet();
+  }
 
   public void sleep() {
     System.out.println("Cat is sleeping ...");
@@ -45,6 +72,22 @@ public class Cat {
 
   public static int sum(int x, int y) {
     return x + y;
+  }
+
+  // Developer A ()
+  public static int methodA(String str, int index){
+    if (str == null)
+      return -1;
+    if (index < 0 || index >= str.length())
+      return -2;
+    return methodB(str, index); //now think of a unit test
+    // what function does methodB provide?
+
+  }
+
+  // ! Developer B (Bug)
+  public static char methodB(String str, int index){
+    return str.charAt(index);
   }
 
   // constructor
